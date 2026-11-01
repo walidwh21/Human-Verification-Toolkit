@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Verification</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="demo-bar" id="demo-bar">
+    <label>Profile <select id="profile-select"></select></label>
+    <label>Challenge <select id="kind-select">
+      <option value="">Profile default</option>
+      <option value="text">Characters</option>
+      <option value="math">Sum</option>
+    </select></label>
+  </header>
+
+  <main class="stage">
+    <section class="card" aria-labelledby="title">
+      <p class="brand" id="brand"></p>
+      <h1 id="title"></h1>
+      <p class="subtitle" id="subtitle"></p>
+
+      <div class="challenge">
+        <img id="captcha" alt="Verification challenge" width="300" height="110">
+        <button type="button" id="refresh" class="icon-btn" aria-label="Get a new challenge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4v7h-7"/></svg>
+        </button>
+      </div>
+
+      <label class="field" for="answer"><span id="prompt">Type the characters you see</span></label>
+      <input id="answer" autocomplete="off" autocapitalize="characters" spellcheck="false" maxlength="24">
+
+      <button type="button" id="submit" class="primary"></button>
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
